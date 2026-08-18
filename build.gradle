@@ -24,3 +24,16 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+android {
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
+
+    defaultConfig {
+        applicationId "com.demon170"
+        minSdkVersion 19
+        targetSdkVersion 28
+        ndk {
+            abiFilters "armeabi-v7a", "x86"
+        }
+    }
+}

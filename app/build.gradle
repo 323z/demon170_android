@@ -1,0 +1,52 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
+
+    defaultConfig {
+        applicationId "com.demon170"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "8.0"
+
+        externalNativeBuild {
+            cmake {
+                cppFlags "-std=c++20 -fexceptions -frtti -O2"
+                arguments "-DANDROID_STL=c++_shared"
+            }
+        }
+
+        ndk {
+            abiFilters 'armeabi-v7a', 'x86'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path "src/main/cpp/CMakeLists.txt"
+        }
+    }
+
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java']
+            manifest.srcFile 'src/main/AndroidManifest.xml'
+            res.srcDirs = ['src/main/res']
+        }
+    }
+
+    // Disable build cache issues
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}

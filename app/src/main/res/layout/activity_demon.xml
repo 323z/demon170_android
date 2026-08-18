@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#000000"
+    android:padding="8dp">
+
+    <!-- RPM Bar -->
+    <TextView
+        android:id="@+id/rpmBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RPM --------------------------------------------------"
+        android:textColor="#00FF00"
+        android:textSize="14sp"
+        android:fontFamily="monospace"
+        android:maxLines="1" />
+
+    <!-- Gear + Mode -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/gearText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="GEAR: [1]"
+            android:textColor="#FFFF00"
+            android:textSize="22sp"
+            android:fontFamily="monospace" />
+    </LinearLayout>
+
+    <!-- Speed -->
+    <TextView
+        android:id="@+id/speedText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SPEED: 0 km/h  0.0 mph"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:fontFamily="monospace" />
+
+    <!-- Boost -->
+    <TextView
+        android:id="@+id/boostText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BOOST: 0.0 psi"
+        android:textColor="#FF00FF"
+        android:textSize="16sp"
+        android:fontFamily="monospace" />
+
+    <!-- Info (timers, distance) -->
+    <TextView
+        android:id="@+id/infoText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dist: 0m"
+        android:textColor="#AAAAAA"
+        android:textSize="14sp"
+        android:fontFamily="monospace" />
+
+    <!-- Cruise status -->
+    <TextView
+        android:id="@+id/cruiseText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CRUISE: OFF"
+        android:textColor="#888888"
+        android:textSize="16sp"
+        android:fontFamily="monospace" />
+
+    <!-- Spacer (road view area) -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#0A0A0A" />
+
+    <!-- Buttons Row 1: Gas / Brake -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+        <Button
+            android:id="@+id/btnGas"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:text="GAS\n(HOLD)"
+            android:textSize="18sp"
+            android:background="#CC0000"
+            android:textColor="#FFFFFF" />
+        <Button
+            android:id="@+id/btnBrk"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:text="BRAKE\n(HOLD)"
+            android:textSize="18sp"
+            android:background="#444444"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <!-- Buttons Row 2: Cruise + Adj -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="5">
+        <Button android:id="@+id/btnCruise" android:layout_width="0dp" android:layout_height="60dp"
+            android:layout_weight="1" android:text="CRZ" android:background="#006600" android:textColor="#FFF" />
+        <Button android:id="@+id/btnCUp"    android:layout_width="0dp" android:layout_height="60dp"
+            android:layout_weight="1" android:text="CR+" android:background="#004400" android:textColor="#FFF" />
+        <Button android:id="@+id/btnCDn"    android:layout_width="0dp" android:layout_height="60dp"
+            android:layout_weight="1" android:text="CR-" android:background="#004400" android:textColor="#FFF" />
+        <Button android:id="@+id/btnCpUp"   android:layout_width="0dp" android:layout_height="60dp"
+            android:layout_weight="1" android:text="C+UP" android:background="#003366" android:textColor="#FFF" />
+        <Button android:id="@+id/btnCpDn"   android:layout_width="0dp" android:layout_height="60dp"
+            android:layout_weight="1" android:text="C-DN" android:background="#003366" android:textColor="#FFF" />
+    </LinearLayout>
+
+    <!-- Buttons Row 3: Mode + Reset -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+        <Button android:id="@+id/btnMode"  android:layout_width="0dp" android:layout_height="55dp"
+            android:layout_weight="1" android:text="MODE (A/M)" android:background="#333366" android:textColor="#FFF" />
+        <Button android:id="@+id/btnReset" android:layout_width="0dp" android:layout_height="55dp"
+            android:layout_weight="1" android:text="RESET" android:background="#663300" android:textColor="#FFF" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,26 @@
+// Top-level build file
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+    }
+    dependencies {
+        // AGP 3.6.4 supports AGP plugin for KitKat (minSdk 19)
+        classpath 'com.android.tools.build:gradle:3.6.4'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
